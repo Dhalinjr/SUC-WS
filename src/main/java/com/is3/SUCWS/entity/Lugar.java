@@ -11,13 +11,14 @@ import javax.persistence.Table;
 @Entity
 @Table(name="lugar")
 public class Lugar {
-	
-	public Lugar(long idlugar, String nombre, String descripcion, double latitud, double longitud, Date fecha,
-			boolean estado) {
+
+	public Lugar(long idlugar, String nombre, String descripcion, String imagen, double latitud, double longitud,
+			Date fecha, boolean estado) {
 
 		this.idlugar = idlugar;
 		this.nombre = nombre;
 		this.descripcion = descripcion;
+		this.imagen = imagen;
 		this.latitud = latitud;
 		this.longitud = longitud;
 		this.fecha = fecha;
@@ -36,6 +37,9 @@ public class Lugar {
 	
 	@Column(name="descripcion", nullable=false)
 	private String descripcion;
+	
+	@Column(name="imagen", nullable=false)
+	private String imagen;
 	
 	@Column(name="latitud", nullable=false)
 	private double latitud;
@@ -71,6 +75,14 @@ public class Lugar {
 
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
+	}
+
+	public String getImagen() {
+		return imagen;
+	}
+
+	public void setImagen(String imagen) {
+		this.imagen = imagen;
 	}
 
 	public double getLatitud() {
