@@ -14,12 +14,20 @@ import javax.persistence.Table;
 public class Evento {
 	
 
-	public Evento(int idevento, String mensaje, Time hora, Date fecha, boolean estado) {
+	
+
+	
+
+	public Evento(int idevento, String titulo, String mensaje, Time hora, Date fecha, Date fechainicio, Date fechafin,
+			boolean estado) {
 		super();
 		this.idevento = idevento;
+		this.titulo = titulo;
 		this.mensaje = mensaje;
 		this.hora = hora;
 		this.fecha = fecha;
+		this.fechainicio = fechainicio;
+		this.fechafin = fechafin;
 		this.estado = estado;
 	}
 
@@ -31,7 +39,10 @@ public class Evento {
 	@Column(name="idevento", nullable=false)
 	private int idevento;
 	
-	@Column(name="mensaje", nullable=false, unique=true)
+	@Column(name="titulo", nullable=false)
+	private String titulo;
+	
+	@Column(name="mensaje", nullable=false)
 	private String mensaje;
 
 	@Column(name="hora", nullable=false)
@@ -39,6 +50,12 @@ public class Evento {
 	
 	@Column(name="fecha", nullable=false)
 	private Date fecha;
+	
+	@Column(name="fechainicio", nullable=false)
+	private Date fechainicio;
+	
+	@Column(name="fechafin", nullable=false)
+	private Date fechafin;
 	
 	@Column(name="estado", nullable=false)
 	private boolean estado;
@@ -51,11 +68,19 @@ public class Evento {
 		this.idevento = idevento;
 	}
 
+	public String getTitulo() {
+		return titulo;
+	}
+
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+
 	public String getMensaje() {
 		return mensaje;
 	}
 
-	public void setMnesaje(String mensaje) {
+	public void setMensaje(String mensaje) {
 		this.mensaje = mensaje;
 	}
 
@@ -75,6 +100,22 @@ public class Evento {
 		this.fecha = fecha;
 	}
 
+	public Date getFechainicio() {
+		return fechainicio;
+	}
+
+	public void setFechainicio(Date fechainicio) {
+		this.fechainicio = fechainicio;
+	}
+
+	public Date getFechafin() {
+		return fechafin;
+	}
+
+	public void setFechafin(Date fechafin) {
+		this.fechafin = fechafin;
+	}
+
 	public boolean isEstado() {
 		return estado;
 	}
@@ -83,5 +124,6 @@ public class Evento {
 		this.estado = estado;
 	}
 
+	
 	
 }
