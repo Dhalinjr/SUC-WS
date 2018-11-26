@@ -26,6 +26,8 @@ import com.is3.SUCWS.service.LugarService;
 @CrossOrigin
 public class Controlador {
 
+	/* ----------------------------------------- Lugar --------------------------------------------------------------- */
+	
 	@Autowired
 	@Qualifier("servlugar")
 	LugarService servlugar;
@@ -42,6 +44,8 @@ public class Controlador {
 		
 		return servlugar.buscarLugarNombre(nombre);
 	}
+	
+	/* ----------------------------------------- Evento --------------------------------------------------------------- */
 	
 	@Autowired
 	@Qualifier("servevento")
